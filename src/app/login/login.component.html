@@ -1,0 +1,32 @@
+<section class="login">
+  <form class="login-form" [formGroup]='loginForm' (ngSubmit)='loginUser()' novalidate autocomplete="off">
+    <img class="star-wars-logo" src="../../assets/images/logo_yellow.png"/>
+    <div class="form-element">
+      <label class="form-label" for="username">Username</label>
+      <input 
+        class="form-control"
+        name="username"
+        type="text"
+        formControlName="username"
+      />
+    </div>
+    <div class="form-element">
+      <label class="form-label" for="passsword">Password</label>
+      <input 
+        class="form-control"
+        name="password"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-element">
+      <button 
+        class="submit-btn"
+        type="submit"
+        [disabled]="!loginForm.valid"
+        [ngClass]="{'disabled': !loginForm.valid}">
+        Enter Hyperspace
+      </button>
+    </div>
+  </form>
+</section>

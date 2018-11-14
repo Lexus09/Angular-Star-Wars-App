@@ -1,0 +1,18 @@
+<section [ngClass]="{'favourite': isFavouritesContainer}" class="planet">
+  
+  <div>
+     <img class="planet-img" 
+     [src]="baseUrl + planet.imgUrl"/>
+  </div>
+
+  <div class="planet-name" 
+       (click)="onGetInhabitants(planet.residents)">
+       {{ planet.name }}
+  </div>
+
+  <div>
+     <img class="favourite-icon" 
+       [src]="isFavourite ? baseUrl + 'heart_full.png' : baseUrl + 'heart_empty.png'" 
+       (click)="addOrRemoveFavourite(planet)"/>
+  </div>
+</section>

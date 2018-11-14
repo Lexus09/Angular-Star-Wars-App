@@ -1,0 +1,228 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.planets {
+    height: 100vh;
+    position: relative;
+
+    .nav-menu {
+        height: 45px;
+        background-color: $candlelight;
+        margin-bottom: 30px;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        z-index: 1;
+        
+        .nav-logo {
+            left: 2%;
+            width: 70px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .right-section {
+            position: absolute;
+            right: 2%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                justify-content: flex-end;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        .search-field {
+            background-color: $black;
+            color: $candlelight;
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            padding: 0 5px;
+
+            @include mobile {
+                width: 40%;
+            }
+
+            &::placeholder {
+                color: $candlelight;
+                font-family: Arial;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .loader {
+        width: 70px;
+        text-align: center;
+        position: absolute;
+        @include centerElement;
+    
+        > div {
+            width: 18px;
+            height: 18px;
+            background-color: $candlelight;
+            border-radius: 100%;
+            display: inline-block;
+            animation: bouncedelay 1.4s infinite ease-in-out both;
+        }
+    
+        .bounce1 {
+            animation-delay: -0.32s;
+        }
+    
+        .bounce2 {
+            animation-delay: -0.16s;
+        }
+    }
+    
+    .planets-container {
+        width: 80%;
+        display: grid;
+        grid-gap: 1.5em;
+        grid-auto-rows: 18em;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        padding-top: 60px;
+
+        @include mobile {
+            grid-auto-rows: 15em;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .planet-wrapper {
+            height: 100%;
+            text-align: center;
+            font-family: $primary-font-family;
+            color: $white;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include mobile {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .no-results-notification {
+        color: $candlelight;
+        font-size: 2rem;
+        font-family: $primary-font-family;
+        position: absolute;
+        @include centerElement;
+        text-align: center;
+    }
+
+    .favourites-container {
+        background-image: url(../../assets/images/bg.png);
+        position: fixed;
+        top: 0;
+        width: 35%;
+        z-index: 2;
+        overflow-y: scroll;
+        height: 100%;
+        will-change: position;
+        animation: 0.6s ease-in-out slideOut forwards;
+
+        @include mobile {
+            width: 100%;
+            animation: 0.3s ease-in-out slideOut forwards;
+        }
+
+        &.closed {
+            animation: 0.6s ease-in-out slideIn forwards;
+
+            @include mobile {
+                animation: 0.3s ease-in-out slideIn forwards;
+            }
+        }
+
+        .scrollable-content {
+            height: auto;
+            padding-bottom: 40px;
+        }
+
+        .favourites-title {
+            font-family: $primary-font-family;
+            color: $candlelight;
+            text-align: center;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 15px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 5%;
+            }
+        }
+
+        .no-favourites {
+            position: absolute;
+            @include centerElement;
+        }
+
+        .favourite-wrapper {
+            font-family: $primary-font-family;
+            font-size: 1.2rem;
+            padding: 0 30px 0 5px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $mine-shaft-opaque;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    &.inhabitants-active {
+        z-index: 3;
+    }
+}
+
+@keyframes bouncedelay {
+    0%, 80%, 100% { 
+      transform: scale(0);
+    } 40% { 
+      transform: scale(1.0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        right: -100vw;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -100vw;
+    }
+}
