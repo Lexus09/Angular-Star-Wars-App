@@ -9,3 +9,7 @@ An Angular app which consumes the SWAPI, which displays planets. It consists of 
 3. Run ng build
 4. Run ng serve --aot
 5. Open a new tab in your browser and go to http://localhost:4200
+
+# Hardcoded Credentials
+  Username: Han
+  Password: Solo
