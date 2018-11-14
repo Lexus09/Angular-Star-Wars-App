@@ -9,19 +9,19 @@ import { LoginComponent } from './login/login.component';
 import { authData, planetData } from './redux/reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    StoreModule.forRoot({ authData, planetData })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
+		StoreModule.forRoot({ authData, planetData })
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

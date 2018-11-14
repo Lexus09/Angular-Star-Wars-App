@@ -6,7 +6,7 @@ import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 import { PlanetComponent } from './planet/planet.component';
 
 @NgModule({
-  declarations: [PlanetsComponent, PlanetDetailComponent, PlanetComponent],
-  imports: [CommonModule, PlanetsRoutingModule]
+	declarations: [PlanetsComponent, PlanetDetailComponent, PlanetComponent],
+	imports: [CommonModule, PlanetsRoutingModule]
 })
 export class PlanetsModule { }

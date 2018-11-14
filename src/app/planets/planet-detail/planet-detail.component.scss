@@ -2,42 +2,42 @@
 @import "../../../styles/variables.scss";
 
 .planet-inhabitants {
-    height: auto;
-    width: 35%;
-    background-color: $candlelight;
-    position: fixed;
-    @include centerElement;
-    z-index: 3;
-    animation: 0.3s ease-in fadeIn;
-    border-radius: 5px;
-    border: 2px solid $black;
-    text-align: center;
-    padding: 20px 0;
-    
-    @include mobile {
-        width: 90%;
-    }
+	height: auto;
+	width: 35%;
+	background-color: $candlelight;
+	position: fixed;
+	@include centerElement;
+	z-index: 3;
+	animation: 0.3s ease-in fadeIn;
+	border-radius: 5px;
+	border: 2px solid $black;
+	text-align: center;
+	padding: 20px 0;
+	
+	@include mobile {
+		width: 90%;
+	}
 
-    h2 {
-        font-family: $primary-font-family;
-        font-size: 2rem;
-        margin-top: 0;
-    }
+	h2 {
+		font-family: $primary-font-family;
+		font-size: 2rem;
+		margin-top: 0;
+	}
 
-    .inhabitants-wrapper {
-        font-size: 1.35rem;
-        line-height: 30px;
-        text-align: center;
-        font-family: $secondary-font-family;
-        font-weight: 600;
-    }
+	.inhabitants-wrapper {
+		font-size: 1.35rem;
+		line-height: 30px;
+		text-align: center;
+		font-family: $secondary-font-family;
+		font-weight: 600;
+	}
 }
 
 @keyframes fadeIn {
-    0%, 50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+	0%, 50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

@@ -2,88 +2,88 @@
 @import '../../styles/variables.scss';
 
 .login {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    @include setBackground('../../assets/images/home.png');
-    transition: background-position-x 0.25s linear;
-    
-    @include desktop-small {
-        background-position-x: -320px;
-    }
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	@include setBackground('../../assets/images/home.png');
+	transition: background-position-x 0.25s linear;
+	
+	@include desktop-small {
+		background-position-x: -320px;
+	}
 
-    @include tablet {
-        background-image: none;
-    }
+	@include tablet {
+		background-image: none;
+	}
 
-    .login-form {
-        width: 20%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        right: 60px;
-        top: 60px;
+	.login-form {
+		width: 20%;
+		height: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		right: 60px;
+		top: 60px;
 
-        @include tablet {
-            width: 50%;
-            @include centerElement;
-        }
+		@include tablet {
+			width: 50%;
+			@include centerElement;
+		}
 
-        @include mobile {
-            width: 75%;
-        }
+		@include mobile {
+			width: 75%;
+		}
 
-        .star-wars-logo {
-            width: 170px;
-            margin-bottom: 20px;
-        }
+		.star-wars-logo {
+			width: 170px;
+			margin-bottom: 20px;
+		}
 
-        .form-element {
-            width: 80%;
-            margin-bottom: 20px;
-        }
+		.form-element {
+			width: 80%;
+			margin-bottom: 20px;
+		}
 
-        .form-label {
-            font-family: $secondary-font-family;
-            font-weight: 600;
-            color: $candlelight;
-        }
-        
-        .form-control {
-            width: 100%;
-            border-radius: 5px;
-            background-color: $black;
-            border: 1px solid $candlelight;
-            color: $candlelight;
-            padding: 6px 5px;
-            margin-top: 5px;
+		.form-label {
+			font-family: $secondary-font-family;
+			font-weight: 600;
+			color: $candlelight;
+		}
+		
+		.form-control {
+			width: 100%;
+			border-radius: 5px;
+			background-color: $black;
+			border: 1px solid $candlelight;
+			color: $candlelight;
+			padding: 6px 5px;
+			margin-top: 5px;
 
-            &:focus {
-                box-shadow: 0 0 10px 4px $hacienda;
-            }
-        }
+			&:focus {
+				box-shadow: 0 0 10px 4px $hacienda;
+			}
+		}
 
-        .submit-btn {
-            width: calc(100% + 10px);
-            background-color: $candlelight;
-            color: $black;
-            border-radius: 5px;
-            border: 1px solid $black;
-            font-family: $primary-font-family;
-            font-size: 1.3rem;
-            box-shadow: 0 0 10px 4px $hacienda;
-            margin-top: 10px;
-            padding: 10px 0;
+		.submit-btn {
+			width: calc(100% + 10px);
+			background-color: $candlelight;
+			color: $black;
+			border-radius: 5px;
+			border: 1px solid $black;
+			font-family: $primary-font-family;
+			font-size: 1.3rem;
+			box-shadow: 0 0 10px 4px $hacienda;
+			margin-top: 10px;
+			padding: 10px 0;
 
-            &.disabled {
-                opacity: 0.5;
-                box-shadow: none;
-                background-color: $candlelight;
-                border: 1px solid $black;
-                color: $black;
-            }
-        }
-    }
+			&.disabled {
+				opacity: 0.5;
+				box-shadow: none;
+				background-color: $candlelight;
+				border: 1px solid $black;
+				color: $black;
+			}
+		}
+	}
 }

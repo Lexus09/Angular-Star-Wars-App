@@ -3,23 +3,23 @@
 
 html,
 body {
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-    background-color: $black;
-    overflow-x: hidden;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	background-color: $black;
+	overflow-x: hidden;
 }
 
 body {
-    @include setBackground('./assets/images/bg.png');
-    height: auto;
-    width: 100vw;
+	@include setBackground('./assets/images/bg.png');
+	height: auto;
+	width: 100vw;
 
-    &.prevent-scroll {
-        overflow: hidden;
-    }
+	&.prevent-scroll {
+		overflow: hidden;
+	}
 
-    * {
-        outline: none;
-    }
+	* {
+		outline: none;
+	}
 }

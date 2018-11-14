@@ -1,56 +1,56 @@
 <section class="planets">
-  <div class="overlay" 
-       [ngClass]="{'inhabitants-active': people?.length}" 
-       (click)="removeOverlay()" 
-       *ngIf="people?.length || shouldShowFavourites">
-  </div>
+	<div class="overlay"
+			 [ngClass]="{'inhabitants-active': people?.length}"
+			 (click)="removeOverlay()"
+			 *ngIf="people?.length || shouldShowFavourites">
+	</div>
 
-  <div class="nav-menu">
-      <img class="nav-logo" src="../../assets/images/logo_black.png"/>
-      <div class="right-section">
-          <input type="text"
-                 class="search-field"
-                 (keyup)="searchPlanets($event.target.value)"
-                 placeholder="Search ..."/>
-          <img (click)="toggleFavourites()" src="../../assets/images/favourites.png"/>
-      </div>
-  </div>
+	<div class="nav-menu">
+			<img class="nav-logo" src="../../assets/images/logo_black.png"/>
+			<div class="right-section">
+					<input type="text"
+								 class="search-field"
+								 (keyup)="searchPlanets($event.target.value)"
+								 placeholder="Search ..."/>
+					<img (click)="toggleFavourites()" src="../../assets/images/favourites.png"/>
+			</div>
+	</div>
 
-  <div class="loader" *ngIf="!planets?.length">
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
-  </div>
+	<div class="loader" *ngIf="!planets?.length || (!(searchResult$ | async)?.length && !searchTimedOut && searchValue?.length)">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+	</div>
 
-  <div *ngIf="!searchValue?.length; else searchInProgress" class="planets-container">
-    <div *ngFor="let planet of planets" class="planet-wrapper">
-      <app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)"></app-planet>
-    </div>
-  </div>
+	<div *ngIf="!searchValue?.length; else searchInProgress" class="planets-container">
+		<div *ngFor="let planet of planets" class="planet-wrapper">
+			<app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)"></app-planet>
+		</div>
+	</div>
 
-  <ng-template #searchInProgress>
-    <div class="planets-container">
-      <span class="no-results-notification" *ngIf="!(searchResult$ | async)?.length"> No results found.</span>
-      <div *ngFor="let planet of searchResult$ | async" class="planet-wrapper">
-        <app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)"></app-planet>
-      </div>
-    </div>
-  </ng-template>
+	<ng-template #searchInProgress>
+		<div class="planets-container">
+			<span class="no-results-notification" *ngIf="searchTimedOut"> No results found.</span>
+			<div *ngFor="let planet of searchResult$ | async" class="planet-wrapper">
+				<app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)"></app-planet>
+			</div>
+		</div>
+	</ng-template>
 
-  <div *ngIf="shouldShowFavourites" [ngClass]="{'closed': closeContainer}" class="favourites-container">
-    <div class="scrollable-content">
-        <div class="favourites-title">
-          <img (click)="toggleFavourites()" src="../../assets/images/chevron_right.svg"/>
-          <h2> Favourite Planets </h2>
-        </div>
-        <img class="no-favourites" *ngIf="!favourites?.length" src="../../assets/images/broken_heart.svg"/>
-        <div *ngFor="let planet of favourites" class="favourite-wrapper">
-          <app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)" [isFavouritesContainer]="true"></app-planet>
-        </div>
-    </div>
-  </div>
+	<div *ngIf="shouldShowFavourites" [ngClass]="{'closed': closeContainer}" class="favourites-container">
+		<div class="scrollable-content">
+				<div class="favourites-title">
+					<img (click)="toggleFavourites()" src="../../assets/images/chevron_right.svg"/>
+					<h2> Favourite Planets </h2>
+				</div>
+				<img class="no-favourites" *ngIf="!favourites?.length" src="../../assets/images/broken_heart.svg"/>
+				<div *ngFor="let planet of favourites" class="favourite-wrapper">
+					<app-planet [planet]="planet" (getInhabitors)="onShowInhabitors($event)" [isFavouritesContainer]="true"></app-planet>
+				</div>
+		</div>
+	</div>
 
-  <div *ngIf="people?.length">
-    <app-planet-detail [planetInhabitants]="people"></app-planet-detail>
-  </div>
+	<div *ngIf="people?.length">
+		<app-planet-detail [planetInhabitants]="people"></app-planet-detail>
+	</div>
 </section>

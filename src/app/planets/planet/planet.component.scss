@@ -2,75 +2,75 @@
 @import '../../../styles/variables.scss';
 
 .planet {
-    position: relative;
-    height: 100%;
-    width: 100%;
+	position: relative;
+	height: 100%;
+	width: 100%;
 
-    &.favourite {
-        text-align: left;
-        display: flex;
-        align-items: center;
+	&.favourite {
+		text-align: left;
+		display: flex;
+		align-items: center;
 
-        > div {
-            text-align: center;
-            width: calc(100% / 3);
+		> div {
+			text-align: center;
+			width: calc(100% / 3);
 
-            &:nth-child(1) {
-                order: 2;
-            }
+			&:nth-child(1) {
+				order: 2;
+			}
 
-            &:nth-child(2) {
-                margin: 0;
-                order: 3;
-                background-color: transparent;
-                color: $candlelight;
-                padding: 0;
-            }
+			&:nth-child(2) {
+				margin: 0;
+				order: 3;
+				background-color: transparent;
+				color: $candlelight;
+				padding: 0;
+			}
 
-            &:nth-child(3) {
-                order: 1;
-                img {
-                    position: initial;
-                }
-            }
-        }
-    }
+			&:nth-child(3) {
+				order: 1;
+				img {
+					position: initial;
+				}
+			}
+		}
+	}
 
-    .planet-img {
-        height: 100px;
+	.planet-img {
+		height: 100px;
 
-        @include mobile {
-            height: 75px;
-        }
-    }
+		@include mobile {
+			height: 75px;
+		}
+	}
 
-    .planet-name {
-        width: 60%;
-        padding: 10px 0;
-        background-color: $candlelight;
-        color: $black;
-        margin: 25px auto;
-        font-size: 1.1rem;
-        cursor: pointer;
+	.planet-name {
+		width: 60%;
+		padding: 10px 0;
+		background-color: $candlelight;
+		color: $black;
+		margin: 25px auto;
+		font-size: 1.1rem;
+		cursor: pointer;
 
-        @include tablet {
-            width: 80%;
-        }
+		@include tablet {
+			width: 80%;
+		}
 
-        @include mobile {
-            width: 100%;
-        }
-    }
+		@include mobile {
+			width: 100%;
+		}
+	}
 
-    .favourite-icon {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 0;
-        right: calc((100% - 60%) / 2);
+	.favourite-icon {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 0;
+		right: calc((100% - 60%) / 2);
 
-        @include mobile {
-            right: 0;
-        }
-    }
+		@include mobile {
+			right: 0;
+		}
+	}
 }
