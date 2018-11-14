@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AddPlanets } from './redux/actions';
-import { PlanetsService } from './planets/planets.service';
+import { PlanetsService } from './services/planets.service';
 
 @Component({
 	selector: 'app-root',

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { empty, Observable, of, from } from 'rxjs';
 import { map, expand, scan, mergeMap, concatMap, toArray } from 'rxjs/operators';
-import { Planet, PlanetResponse, PlanetImages, Person } from './planets.models';
+import { Planet, PlanetResponse, PlanetImages, Person } from '../planets/planets.models';
 
 @Injectable({
 	providedIn: 'root'

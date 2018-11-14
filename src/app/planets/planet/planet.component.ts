@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { AddPlanetToFavourites, RemovePlanetFromFavourites } from '../../redux/actions';
 import { Planet } from '../planets.models';
 import { planetConst } from './planet.const';
-import { PlanetsService } from '../planets.service';
+import { PlanetsService } from '../../services/planets.service';
 
 @Component({
 	selector: 'app-planet',
