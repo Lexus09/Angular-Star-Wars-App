@@ -19,7 +19,6 @@ export class PlanetComponent implements OnInit, OnDestroy {
 
   private planetInhabitants$: Subscription;
   isFavourite: boolean;
-  randomPlanetImg: string;
   baseUrl: string;
 
   constructor(private http: HttpClient, private store: Store<any>) { }
