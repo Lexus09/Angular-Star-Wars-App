@@ -4,7 +4,7 @@ An Angular app which consumes the SWAPI, which displays planets. It consists of 
 
 # Setting Up The Project
 
-1. Install NodeJS and Angular-CLI
+1. Install Node.js and Angular-CLI
 2. Run npm install
 3. Run ng build
 4. Run ng serve --aot
