@@ -1,17 +1,17 @@
 <section class="planets">
 	<div class="overlay"
-			 [ngClass]="{'inhabitants-active': people?.length}"
-			 (click)="removeOverlay()"
-			 *ngIf="people?.length || shouldShowFavourites">
+		 [ngClass]="{'inhabitants-active': people?.length}"
+		 (click)="removeOverlay()"
+		 *ngIf="people?.length || shouldShowFavourites">
 	</div>
 
 	<div class="nav-menu">
 			<img class="nav-logo" src="../../assets/images/logo_black.png"/>
 			<div class="right-section">
-					<input type="text"
-								 class="search-field"
-								 (keyup)="searchPlanets($event.target.value)"
-								 placeholder="Search ..."/>
+					<input 	type="text"
+							class="search-field"
+							(keyup)="searchPlanets($event.target.value)"
+							placeholder="Search ..."/>
 					<img (click)="toggleFavourites()" src="../../assets/images/favourites.png"/>
 			</div>
 	</div>

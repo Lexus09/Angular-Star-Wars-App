@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { mergeMap, toArray, tap } from 'rxjs/operators';
+import { mergeMap, scan, tap } from 'rxjs/operators';
 import { of, Subscription, Observable } from 'rxjs';
 import { SearchService } from '../services/search.service';
 import { Planet, Person } from './planets.models';
@@ -56,8 +56,8 @@ export class PlanetsComponent implements OnInit, OnDestroy {
 			.pipe(
 				tap(() => this.searchTimedOut = false),
 				mergeMap((planet: Planet) => of({...planet, imgUrl: this.getPlanetImgUrl(planet)})),
-				toArray(),
-				tap((result: Array<Planet>) => this.searchTimedOut = result.length <= 0)
+				scan((acc, planet: Planet) => [...acc, planet], []),
+				tap((result: Array<Planet>) => this.searchTimedOut = !result.length)
 			);
 	}
 
